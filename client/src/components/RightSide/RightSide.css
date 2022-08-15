@@ -1,0 +1,26 @@
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+.homeLogo{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.navIcons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.navIcons>img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.btn-Rightside{
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+}

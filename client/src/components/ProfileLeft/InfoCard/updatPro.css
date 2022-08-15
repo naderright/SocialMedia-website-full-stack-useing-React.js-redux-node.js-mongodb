@@ -1,0 +1,15 @@
+.updatPro{
+    position: absolute;
+    top: 8%;
+    right:25%; 
+    /* bottom: -2%; */
+    left: 25%;
+    z-index: 1;
+    background-color: #fff;
+}
+.infoForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

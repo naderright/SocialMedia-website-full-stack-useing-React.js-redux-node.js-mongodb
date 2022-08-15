@@ -1,0 +1,1 @@
+export const startLinkImage = 'http://localhost:5000/image/';
