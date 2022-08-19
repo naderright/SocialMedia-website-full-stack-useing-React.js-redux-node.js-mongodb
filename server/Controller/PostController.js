@@ -1,6 +1,25 @@
 import PostModel from "../Models/PostModel.js";
 import mongoose from "mongoose";
 import UserModel from "../Models/usreModel.js";
+import CommentModel from "../Models/CommentModel.js";
+
+//add comment 
+
+export const addComment = async(req,res)=>{
+  const newComment = new CommentModel(req.body);
+  try {
+    await newComment.save();
+    const post = await PostModel.findById(req.body.postId);
+    if (post) {
+      await post.updateOne({ $push:{comments:newComment._id} });
+      res.status(200).json({message:"success add comment",comment:newComment});
+    } else {
+      res.status(403).json("Action forbidden");
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
 
 // Creat new Post
 export const createPost = async (req, res) => {

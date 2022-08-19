@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './InfoCard.css'
 import { FaPencilAlt } from "react-icons/fa";
-import ProfileModal from '../../ProfileModel/ProfileModel';
+//import ProfileModal from '../../ProfileModel/ProfileModel';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -18,7 +18,7 @@ const InfoCard = () => {
 
     useEffect(() => {
         const fetchProfileUser = async () => {
-            if (profileUserId == user._id) {
+            if (profileUserId === user._id) {
                 setProfileUser(user);
             } else {
                 const profileUser = await ApiUser.getUser(profileUserId);
@@ -26,7 +26,7 @@ const InfoCard = () => {
             }
         }
         fetchProfileUser();
-    }, [user])
+    }, [profileUserId,user])
 
     const handelLogout = () => {
         dispatch({ type: 'LOG_OUT' });

@@ -54,7 +54,7 @@ const PostShare = () => {
     }
     return (
         <div className='PostShare'>
-            <img src={user.profilePicture?startLinkImage+user.coverPicture:profile} alt="" />
+            <img src={user.profilePicture?startLinkImage+user.profilePicture:profile} alt="" />
             <div>
                 <input ref={desc} required type="text" placeholder='What is happing ?' name="" id="" />
                 <div className="postOption">

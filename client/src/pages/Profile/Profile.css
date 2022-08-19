@@ -1,8 +1,9 @@
 .profile{
     position: relative;
     display: grid;
-    grid-template-columns: 20% auto 20%;
-    gap: 5rem;
+    grid-template-columns: 22% auto 22%;
+    gap: 2rem;
+    padding:0 5rem ;
 }
 .profileCenter{
     display: flex;

@@ -1,7 +1,7 @@
 import React from 'react'
 import './updatPro.css'
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { UploadImage } from "../../../Store/actions/UploadPostAction";
 import { updateUser } from "../../../Store/actions/userAction.js";

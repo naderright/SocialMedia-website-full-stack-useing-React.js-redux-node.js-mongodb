@@ -2,10 +2,11 @@ import React from 'react'
 import './Posts.css'
 import { useParams } from 'react-router-dom'
 // import { PostsData } from '../../Data/PostsDada'
-import Post from './Post/Post'
+import Post from '../Post/Post.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getTimeLinePosts } from '../../../Store/actions/PostsAction.js'
+
 //import { useState } from 'react'
 const Posts = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const Posts = () => {
   //const[postsShow,setPostsShow] = useState([]);
   // console.log(posts);
   useEffect(() => {
-    dispatch(getTimeLinePosts(user._id));
+   const getTimLine=()=> dispatch(getTimeLinePosts(user._id));
+   getTimLine()
   }, [])
 
   return (
@@ -29,7 +31,7 @@ const Posts = () => {
       }) : !posts ? 'Fetching data...' : posts.map((post, id) => {
         return <Post data={post} key={id} />
       })}
-
+     
      
     </div>
   )

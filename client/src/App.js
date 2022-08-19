@@ -2,9 +2,8 @@ import './App.css';
 import Auth from './pages/Auth/Auth';
 import Home from './pages/home/Home.jsx';
 import Profile from './pages/Profile/Profile';
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate  } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProtectRoute from './ProtectRoute';
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);

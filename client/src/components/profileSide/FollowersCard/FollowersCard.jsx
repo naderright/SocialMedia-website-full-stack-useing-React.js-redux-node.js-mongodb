@@ -49,10 +49,9 @@ const Followerscard = () => {
                 <span>{person.username}</span>
               </div>
             </div>
-            {persons.map((person , id) => 
             <button key={id} className={person.followers.includes(user._id) || followingUser ? 'Button btn-unfollow' : 'Button btn-follower'} onClick={() => handlefollow(person)}>
                 {person.followers.includes(user._id) || followingUser ? 'unFollow' : 'follow'}</button>
-            )}
+            
 
           </div>
         }
