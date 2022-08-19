@@ -5,9 +5,7 @@ import { addComment } from '../../../Store/actions/PostsAction';
 import profile from '../../../img/profile.jpg';
 import './ShowCommentsPopUp.css';
 import { BiMessageSquareX } from "react-icons/bi";
-import { useState } from 'react';
 import { useEffect } from 'react';
-//import { getUser } from '../../../Store/api/userRequest';
 
 const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
 
@@ -32,10 +30,6 @@ const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
     const handleCloseComments = () => {
         setShowComments(false)
     }
-
-    useEffect(() => {
-       
-    }, [])
 
 
     return (
