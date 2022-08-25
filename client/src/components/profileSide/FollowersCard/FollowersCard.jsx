@@ -13,7 +13,6 @@ const Followerscard = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.authReducer.authData);
 
-  const [followingUser, setFollowingUser] = useState(false);
 
   useEffect(() => {
     const fetchPersons = async () => {
@@ -22,15 +21,13 @@ const Followerscard = () => {
 
     }
     fetchPersons();
-  }, [])
+  }, [user])
   //console.log(followingUser);
   const handlefollow = (person) => {
     if (!user.following.includes(person._id)) {
       dispatch(followUser(person._id, user))
-      setFollowingUser(true)
     } else {
       dispatch(unfollowUser(person._id, user))
-      setFollowingUser(false)
     }
 
   }
@@ -49,10 +46,9 @@ const Followerscard = () => {
                 <span>{person.username}</span>
               </div>
             </div>
-            <button key={id} className={person.followers.includes(user._id) || followingUser ? 'Button btn-unfollow' : 'Button btn-follower'} onClick={() => handlefollow(person)}>
-                {person.followers.includes(user._id) || followingUser ? 'unFollow' : 'follow'}</button>
+            <button key={id} className={person.followers.includes(user._id) ? 'Button btn-unfollow' : 'Button btn-follower'} onClick={() => handlefollow(person)}>
+                {person.followers.includes(user._id)  ? 'unFollow' : 'follow'}</button>
             
-
           </div>
         }
       }) : ''}

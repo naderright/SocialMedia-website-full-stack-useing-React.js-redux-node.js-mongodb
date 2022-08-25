@@ -6,6 +6,7 @@ import profile from '../../../img/profile.jpg';
 import './ShowCommentsPopUp.css';
 import { BiMessageSquareX } from "react-icons/bi";
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
 
@@ -13,14 +14,20 @@ const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
     const { user } = useSelector((state) => state.authReducer.authData);
     const commentRef = useRef();
 
+    const [allComments ,setAllComments] = useState([]);
+
 
     const handelSubmitComment = (e) => {
         e.preventDefault();
         const newComment = {
+            username:user.username,
             userId: user._id,
             postId: data._id,
             text: commentRef.current.value
         };
+        if (user.profilePicture) {
+            newComment.userProfile = user.profilePicture;
+        }
         //console.log(newComment);
         dispatch(addComment(newComment));
     
@@ -29,7 +36,11 @@ const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
 
     const handleCloseComments = () => {
         setShowComments(false)
-    }
+    };
+
+    useEffect(()=>{
+        setAllComments(comments)
+    },[comments])
 
 
     return (
@@ -41,7 +52,7 @@ const ShowCommentsPopUp = ({ setShowComments, data, comments }) => {
                     <BiMessageSquareX onClick={handleCloseComments} className='closeIcon' />
                 </div>
                 <div className="miidelCommentsPop">
-                    {comments.map((comment) => <div className="comment">
+                    {allComments.map((comment) => <div className="comment">
 
                         <div className="ownerComment">
                             <img src={comment.userProfile ? startLinkImage + comment.userProfile : profile} alt="" />

@@ -33,12 +33,14 @@
 .btn-follower{
     padding:0 20px;
     height: 2rem;
+    outline: none;
 }
 .btn-unfollow{
     color: var(--orange);
     border:2px solid var(--orange);
     cursor: pointer;
     background: transparent;
+    outline: none;
     padding: .4rem .6rem;
     transition: all .2s;
 }
