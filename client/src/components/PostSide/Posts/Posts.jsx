@@ -15,6 +15,7 @@ const Posts = () => {
   const { posts } = useSelector((state) => state.postReducer);
   //const[postsShow,setPostsShow] = useState([]);
   // console.log(posts);
+  
   useEffect(() => {
    const getTimLine=()=> dispatch(getTimeLinePosts(user._id));
    getTimLine()
@@ -29,7 +30,10 @@ const Posts = () => {
           return 'no posts';
         }
       }) : !posts ? 'Fetching data...' : posts.map((post, id) => {
-        return <Post data={post} key={id} />
+        if (user._id === post.userId || user.following.includes(post.userId)) {
+          return <Post data={post} key={id} />
+        }
+
       })}
      
      
