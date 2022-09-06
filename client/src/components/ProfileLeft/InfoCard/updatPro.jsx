@@ -75,7 +75,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="firstname"
             placeholder="First Name"
             onChange={handelChange}
-            //value={formData.firstname}
+           value={formData.firstname}
           />
 
           <input
@@ -84,7 +84,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="lastname"
             placeholder="Last Name"
             onChange={handelChange}
-            //value={formData.lastname}
+            value={formData.lastname}
           />
         </div>
 
@@ -95,7 +95,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="worksAt"
             placeholder="Works at"
             onChange={handelChange}
-            //value={formData.worksAt}
+            value={formData.worksAt}
           />
         </div>
 
@@ -106,7 +106,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="livesin"
             placeholder="LIves in"
             onChange={handelChange}
-            //value={formData.livesin}
+            value={formData.livesin}
           />
 
           <input
@@ -115,7 +115,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="country"
             placeholder="Country"
             onChange={handelChange}
-            //value={formData.country}
+            value={formData.country}
           />
         </div>
 
@@ -126,7 +126,7 @@ const UpdatPro = ({data,setModalOpened}) => {
             name="relationShip"
             placeholder="RelationShip Status"
             onChange={handelChange}
-            //value={formData.relationShip}
+            value={formData.relationShip}
           />
         </div>
 

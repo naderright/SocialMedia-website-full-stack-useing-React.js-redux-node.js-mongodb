@@ -80,7 +80,7 @@ const Post = ({ data }) => {
 
        // getComments();
         userPost();
-    }, [])
+    }, [data])
     useEffect(()=>{
         getComments();
     },[comments])

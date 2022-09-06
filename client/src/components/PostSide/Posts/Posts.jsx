@@ -18,7 +18,7 @@ const Posts = () => {
   
   useEffect(() => {
    const getTimLine=()=> dispatch(getTimeLinePosts(user._id));
-   getTimLine()
+   getTimLine();
   }, [])
 
   return (

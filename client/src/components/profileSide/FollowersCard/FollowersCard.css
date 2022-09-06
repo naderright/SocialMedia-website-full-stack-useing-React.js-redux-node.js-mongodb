@@ -17,8 +17,8 @@
     align-items: center;
 }
 .followerImg{
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
 }
 .name{
@@ -41,7 +41,7 @@
     cursor: pointer;
     background: transparent;
     outline: none;
-    padding: .4rem .6rem;
+    padding: .4rem .4rem;
     transition: all .2s;
 }
 .btn-unfollow:hover{
